@@ -1,0 +1,2 @@
+# Sysmon-EL-PyQt
+window환경에서의 sysmon log들을 winlogbeat를 통해 다른환경의 컴퓨터에서 Logstash로 로그들을 받은 후 Elasticsearch로 정재하고,PyQt로 표출
