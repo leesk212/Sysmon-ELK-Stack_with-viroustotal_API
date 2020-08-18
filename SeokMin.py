@@ -1,9 +1,8 @@
 
-import viroustotal_API as Check_Hash
-import OpenWhiteList as openWhitelist
 import elasticsearch
 es_client = elasticsearch.Elasticsearch("localhost:9200")
-
+import viroustotal_API as Check_Hash
+import OpenWhiteList as openWhitelist
 import json
 all_indicies = []
 access_ip_indices = (es_client.indices.get_alias())

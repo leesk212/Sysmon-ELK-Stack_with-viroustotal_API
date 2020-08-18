@@ -57,11 +57,10 @@ class Mywindow(QMainWindow,form_class):
     
     def indices_list_click(self):
         print("[log] Clicked"+"__"+self.all_indices_view.currentItem().text())
-
         self.hostname.setText(rs.find_host_name(self.all_indices_view.currentItem().text()))
-        
         self.Accesstime.setText(rs.find_access_time(self.all_indices_view.currentItem().text()))
         self.connected_host_list.addItem(rs.find_host_name(self.all_indices_view.currentItem().text()))
+        self.connected_host_list.clear()
         self.DNS.addItem("================================================================")
         DNS = rs.find_dns(self.all_indices_view.currentItem().text())
         for f in range(0,len(DNS)):
