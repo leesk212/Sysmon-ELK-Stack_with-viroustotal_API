@@ -54,7 +54,7 @@ class Mywindow(QMainWindow,form_class):
         count = self.count
         print('[log] indices search ')
         self.count = self.count +1
-    
+
     def indices_list_click(self):
         print("[log] Clicked"+"__"+self.all_indices_view.currentItem().text())
         self.hostname.setText(rs.find_host_name(self.all_indices_view.currentItem().text()))
