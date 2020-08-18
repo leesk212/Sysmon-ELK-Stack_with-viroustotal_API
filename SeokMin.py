@@ -361,3 +361,20 @@ def find_PS_With_Hash_table_list(indice):
                         table[index].append(search_tenth['hits']['hits'][0]['_source']['winlog']['event_data']['Signature'])
                         
         return table
+
+def find_whitelist_time_range(indicies):
+    #indices 별로 whitelist가 다를 것임 (+host_name whitelist가 다를 것임)
+    search_ninth = es_client.search(
+        index=indice,
+        body={
+                  "query": {
+                    "match_phrase": {
+                      "winlog.event_data.OriginalFileName": "CALC.EXE"
+                    }
+                  }
+        }
+    )
+
+
+
+    return whitelist
