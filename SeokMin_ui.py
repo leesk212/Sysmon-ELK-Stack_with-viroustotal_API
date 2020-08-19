@@ -54,11 +54,12 @@ class Mywindow(QMainWindow,form_class):
         count = self.count
         print('[log] indices search ')
         self.count = self.count +1
-
+    
     def indices_list_click(self):
-        self.connected_host_list.clear()
         print("[log] Clicked"+"__"+self.all_indices_view.currentItem().text())
+
         self.hostname.setText(rs.find_host_name(self.all_indices_view.currentItem().text()))
+        
         self.Accesstime.setText(rs.find_access_time(self.all_indices_view.currentItem().text()))
         self.connected_host_list.addItem(rs.find_host_name(self.all_indices_view.currentItem().text()))
         self.DNS.addItem("================================================================")
@@ -97,6 +98,12 @@ class Mywindow(QMainWindow,form_class):
         self.CEE.addItem("Total number of Event:   "+C_E_E[0])
         for f in range(1,len(C_E_E)):
             self.CEE.addItem("\t\t"+C_E_E[f])
+
+        B_C_B = rs.find_booting_start_time(self.all_indices_view.currentItem().text())
+        self.BCB.addItem("Booting count: %d" %len(B_C_B))
+        for f in range(len(B_C_B)):
+            self.BCB.addItem("\t\t"+B_C_B[f])
+
 
     def SearchBlackList(self):
         self.viroustotal_API_Result.clear()

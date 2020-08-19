@@ -11,5 +11,3 @@ def OpenWhiteList(filedirectory):
         temp.append(Hash)
         whitelist.append(temp)
     return whitelist
-
-def WriteWhiteList(filedirecroty):

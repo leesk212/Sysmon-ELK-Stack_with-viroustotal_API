@@ -1,8 +1,10 @@
 
-import elasticsearch
-es_client = elasticsearch.Elasticsearch("localhost:9200")
+
 import viroustotal_API as Check_Hash
 import OpenWhiteList as openWhitelist
+import elasticsearch
+es_client = elasticsearch.Elasticsearch("localhost:9200")
+
 import json
 all_indicies = []
 access_ip_indices = (es_client.indices.get_alias())
@@ -247,7 +249,7 @@ def find_last_100_logs(indice):
                 time.append(search_seventh['hits']['hits'][b]['_source']['winlog']['event_data']['UtcTime'])
                 event_id.append(search_seventh['hits']['hits'][b]['_source']['winlog']['event_id'])
                 event_action.append(search_seventh['hits']['hits'][b]['_source']['event']['action'])
-                if event_id[b] == 8:
+                if event_id[b] == 8 | event_id[b] == 6:
                         event_data_processid.append("Default")
                         Image.append("Default")
                 else:
@@ -362,19 +364,47 @@ def find_PS_With_Hash_table_list(indice):
                         
         return table
 
-def find_whitelist_time_range(indicies):
-    #indices 별로 whitelist가 다를 것임 (+host_name whitelist가 다를 것임)
-    search_ninth = es_client.search(
+def find_booting_start_time(indice):
+    boot_start_time_table=[]
+    search_eleventh = es_client.search(
         index=indice,
         body={
-                  "query": {
-                    "match_phrase": {
-                      "winlog.event_data.OriginalFileName": "CALC.EXE"
-                    }
-                  }
+            "sort": [
+                {"@timestamp": "desc"}
+            ],
+              "query": {
+                "match_phrase": {
+                  "winlog.event_id": 4
+                }
+              },
+            "size": 300
         }
+
     )
+    total = len(search_eleventh['hits']['hits'])
+    for f in range(total):
+        boot_start_time_table.append(search_eleventh['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
 
+    return boot_start_time_table
 
+def find_booting_end_time(indice):
+    boot_end_time_table=[]
+    search_tweleventh = es_client.search(
+        index=indice,
+        body={
+            "sort": [
+                {"@timestamp": "desc"}
+            ],
+            "query": {
+                "match_phrase": {
+                  "winlog.event_data.OriginalFileName": "CALC.EXE"
+                }
+              },
+            "size": 300
+        }
 
-    return whitelist
+    )
+    total = len(search_tweleventh['hits']['hits'])
+    for f in range(total):
+        boot_end_time_table.append(search_tweleventh['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
+    return boot_end_time_table
