@@ -8,34 +8,41 @@ window환경에서의 sysmon log들을 winlogbeat를 통해 다른환경의 컴�
 ## 2020.08.20
 
 
-# 참조 
+### 참조 
 :https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 
-# docker ELK와 sysmon 연동
 
-# 1. 개요
+### docker ELK와 sysmon 연동
 
-## 1.1 아키텍처
+
+### 1. 개요
+
+
+#### 1.1 아키텍처
 
 1. 수집한 sysmon이벤트를 winlogbeat를 사용하여 ELK서버의 logstash로 전달
 2. logstash는 sysmon이벤트를 elasticsearch에 전달
 3. kibana로 elasticsearch의 데이터를 탐색
 
-# 2. 서버설정
+
+### 2. 서버설정
 * 서버 버전: ubuntu 18.04LTS </br>
 * docker, docker-compose 설치
 
 
-## 2.1 고정IP설정
+
+#### 2.1 고정IP설정
 - ubuntu18부터는 이전 ubunut와 다르게 IP설정이 변경됨 </br>
     
-## 2.2 도커 이미지 다운로드
+
+#### 2.2 도커 이미지 다운로드
 ```
 $ git clone https://github.com/deviantony/docker-elk.git
 $ sudo docker-compose build
 ```
 
-## 2.3 elasticsearch 설정
+
+#### 2.3 elasticsearch 설정
 * X-Pack설정 일부 비활성화 <br/>
 
 ```
@@ -46,7 +53,8 @@ network.host: 0.0.0.0
 discovery.type: single-node
 ```
 
-## 2.4 kibana 설정
+
+#### 2.4 kibana 설정
 ```
 $ vi ./kibana/config/kibana.yml
 
@@ -56,7 +64,8 @@ elasticsearch.hosts: [ "http://elasticsearch:9200" ]
 xpack.monitoring.ui.container.elasticsearch.enabled: true
 ```
 
-## 2.5 logstash설정
+
+#### 2.5 logstash설정
 ```
 $ vi ./logstash/config/logstash.yml
 
@@ -84,7 +93,7 @@ output {
 }
 ```
 
-## 2.6 도커 컨테이너 실행
+#### 2.6 도커 컨테이너 실행
 - d인자는 데몬실행(각 컨테이너가 백그라운드로 서비스 실행)
 ```
 # sudo docker-compose up -d
@@ -96,14 +105,17 @@ output {
 9300: Elasticsearch TCP transport
 5601: Kibana
 
-## 2.7 도커 컨테이너 종료
+
+#### 2.7 도커 컨테이너 종료
 - 모든 도커 컨테이너 종료
 ```
 # sudo docker-compose down
 ```
 
-# 3. 악성코드 실행하는 가상머신 설정
-## 3.1 winlogbeat 설치&설정
+
+### 3. 악성코드 실행하는 가상머신 설정
+
+#### 3.1 winlogbeat 설치&설정
 - 다운로드:  [https://www.elastic.co/kr/downloads/beats/winlogbeat](https://www.elastic.co/kr/downloads/beats/winlogbeat)
 ![docker%20ELK%20sysmon/Untitled%201.png](docker%20ELK%20sysmon/Untitled%201.png)
 
@@ -118,24 +130,28 @@ output.logstash:
     hosts: ["우분투IP:5000"]
     index: winlogbeat
 ```    
-## 3.2 winlogbeat 설정 적용
+
+#### 3.2 winlogbeat 설정 적용
 - winlogbeat 설정파일 적용
 ```
 PS> .\winlogbeat.exe -c .\winlogbeat.yml
 ```
 
-## 3.3 sysmon 실행
+
+#### 3.3 sysmon 실행
 ```
 PS> .\sysmon.exe -i [sysmon설정파일.xml]
 ```
 * 설정파일이 없으면 https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml 다운받아 사용
 
-## 3.4 winglobeat 실행
+
+#### 3.4 winglobeat 실행
 ```
 PS> .\install-service-winlogbeat.ps1
 PS> start-service winlogbeat
 ```
-# 4. 참고자료
+
+### 4. 참고자료
 * Docker, ELK: https://judo0179.tistory.com/60
 * Docker, ELK: https://github.com/deviantony/docker-elk
 * winlogbeat: https://cyberwardog.blogspot.com/2017/02/setting-up-pentesting-i-mean-threat_87.html
