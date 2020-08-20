@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1311</width>
+    <height>939</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>20</y>
+      <width>911</width>
+      <height>861</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Abstract</string>
+     </attribute>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>300</y>
+        <width>851</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Last 300 logs</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="LHL">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>320</y>
+        <width>851</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>STIXSizeFiveSym</family>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>421</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Host Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="hostname">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>421</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>BlankCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="CEE">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>40</y>
+        <width>371</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>STIXSizeFiveSym</family>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>20</y>
+        <width>371</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Count of Each Event_id</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>421</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Access time by date</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Accesstime">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>421</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>BlankCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="BCB">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>421</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>STIXSizeFiveSym</family>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>130</y>
+        <width>421</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Booting start time and Booting count</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <zorder>LHL</zorder>
+     <zorder>label_13</zorder>
+     <zorder>label_4</zorder>
+     <zorder>hostname</zorder>
+     <zorder>CEE</zorder>
+     <zorder>label_27</zorder>
+     <zorder>label_10</zorder>
+     <zorder>Accesstime</zorder>
+     <zorder>BCB</zorder>
+     <zorder>label_17</zorder>
+    </widget>
+    <widget class="QWidget" name="tabWidgetPage1">
+     <attribute name="title">
+      <string>Special DNS,IP,Process</string>
+     </attribute>
+     <widget class="QListWidget" name="MRP">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>360</y>
+        <width>821</width>
+        <height>211</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="MCP">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>610</y>
+        <width>821</width>
+        <height>191</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>30</y>
+        <width>439</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>590</y>
+        <width>671</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Most Closed Process</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>340</y>
+        <width>671</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> Most Running Process</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>100</y>
+        <width>401</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recent Access DNS Qurey</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>100</y>
+        <width>401</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recent Access IP</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>821</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Special list 
+ [Recent Access DNS,IP Most Running,Closed Process]</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>120</y>
+        <width>821</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QListWidget" name="DNS"/>
+       </item>
+       <item>
+        <widget class="QListWidget" name="IP"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Make WhiteList</string>
+     </attribute>
+     <widget class="QListWidget" name="STB">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>100</y>
+        <width>361</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QListView::ListMode</enum>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="PW">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>400</y>
+        <width>771</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QListView::ListMode</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="SBL_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>760</y>
+        <width>771</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export WhiteList</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>380</y>
+        <width>771</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Preview Whitelist</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>9</y>
+        <width>771</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List of Whitelist 
+ [from booting time to running calc.exe]</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="ETB">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>100</y>
+        <width>361</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QListView::ListMode</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>59</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Click start time
+(Based on booting start time)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>60</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Click end time
+(Based on running calc.exe)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabWidgetPage2">
+     <attribute name="title">
+      <string>Search BlackList</string>
+     </attribute>
+     <widget class="QToolButton" name="insertFile">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="Prompt_of_fileopen">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>20</y>
+        <width>491</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;========== Click and Import the WhiteList&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="SBL">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>20</y>
+        <width>281</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Search BlackList</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>70</y>
+        <width>361</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Inspect the hash of process by VirousTotal</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>570</y>
+        <width>201</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List of suspected Process</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="SuspectTable">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>590</y>
+        <width>241</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>70</y>
+        <width>201</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List of clean Process</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="whitelistbox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>241</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="viroustotal_API">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>120</y>
+        <width>361</width>
+        <height>641</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="autoScroll">
+       <bool>true</bool>
+      </property>
+      <property name="autoScrollMargin">
+       <number>100</number>
+      </property>
+      <property name="movement">
+       <enum>QListView::Snap</enum>
+      </property>
+      <property name="resizeMode">
+       <enum>QListView::Adjust</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>90</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List of vaccines that can be tested</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="viroustotal_API_Result">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>120</y>
+        <width>191</width>
+        <height>641</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="autoScroll">
+       <bool>true</bool>
+      </property>
+      <property name="autoScrollMargin">
+       <number>100</number>
+      </property>
+      <property name="movement">
+       <enum>QListView::Snap</enum>
+      </property>
+      <property name="resizeMode">
+       <enum>QListView::Adjust</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>90</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="SBL_2">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>780</y>
+        <width>581</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update WhiteList</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QListWidget" name="all_indices_view">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>140</y>
+      <width>301</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="viewMode">
+     <enum>QListView::ListMode</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>640</y>
+      <width>301</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>Connected Host List</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="connected_host_list">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>21</y>
+      <width>301</width>
+      <height>118</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Search indices</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn1">
+       <property name="whatsThis">
+        <string>ssss</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhDate</set>
+       </property>
+       <property name="text">
+        <string>clear</string>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Refresh">
+       <property name="text">
+        <string> Refresh</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Indices</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <zorder>all_indices_view</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>tabWidget</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1311</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>file</string>
+    </property>
+    <addaction name="actionB_txt"/>
+    <addaction name="actionC_txt"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAsdfasd">
+   <property name="text">
+    <string>asdfasd</string>
+   </property>
+  </action>
+  <action name="actionAsdfsadf">
+   <property name="text">
+    <string>asdfsadf</string>
+   </property>
+  </action>
+  <action name="actionAsdfasdf">
+   <property name="text">
+    <string>asdfasdf</string>
+   </property>
+  </action>
+  <action name="actionAsdfasdf_2">
+   <property name="text">
+    <string>asdfasdf</string>
+   </property>
+  </action>
+  <action name="actionAasdfasfd">
+   <property name="text">
+    <string>aasdfasfd</string>
+   </property>
+  </action>
+  <action name="actionAsdfasdf_3">
+   <property name="text">
+    <string>asdfasdf</string>
+   </property>
+  </action>
+  <action name="actionAsdf">
+   <property name="text">
+    <string>asdf</string>
+   </property>
+  </action>
+  <action name="actionAsdfasd_2">
+   <property name="text">
+    <string>asdfasd</string>
+   </property>
+  </action>
+  <action name="actionFasd">
+   <property name="text">
+    <string>fasd</string>
+   </property>
+  </action>
+  <action name="actionFa">
+   <property name="text">
+    <string>fa</string>
+   </property>
+  </action>
+  <action name="actionSdfa">
+   <property name="text">
+    <string>sdfa</string>
+   </property>
+  </action>
+  <action name="actionSd">
+   <property name="text">
+    <string>sd</string>
+   </property>
+  </action>
+  <action name="actionF">
+   <property name="text">
+    <string>f</string>
+   </property>
+  </action>
+  <action name="actionB_txt">
+   <property name="text">
+    <string>b.txt</string>
+   </property>
+  </action>
+  <action name="actionC_txt">
+   <property name="text">
+    <string>c.txt</string>
+   </property>
+  </action>
+  <action name="actionAaaa">
+   <property name="text">
+    <string>aaaa</string>
+   </property>
+  </action>
+  <action name="actionBbbb">
+   <property name="text">
+    <string>bbbb</string>
+   </property>
+  </action>
+  <action name="actionCcccc">
+   <property name="text">
+    <string>ccccc</string>
+   </property>
+  </action>
+  <action name="actionDdddd">
+   <property name="text">
+    <string>ddddd</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>btn1</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_btn1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>inqury()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>231</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>all_indices_view</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>indices_list_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>331</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>472</x>
+     <y>707</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Refresh</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Auto_refresh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1194</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SBL</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SearchBlackList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1061</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1108</x>
+     <y>46</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SuspectTable</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_suspected_process_box()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>632</x>
+     <y>726</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>855</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viroustotal_API</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_list_of_vaccines_box()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>914</x>
+     <y>319</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>818</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Prompt_of_fileopen</sender>
+   <signal>textChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_file_open_btn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>654</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot1()</slot>
+  <slot>click_btn1()</slot>
+  <slot>click_btn2()</slot>
+  <slot>inqury()</slot>
+  <slot>indices_list_click()</slot>
+  <slot>Auto_refresh()</slot>
+  <slot>slot3()</slot>
+  <slot>SearchBlackList()</slot>
+  <slot>click_suspected_process_box()</slot>
+  <slot>click_list_of_vaccines_box()</slot>
+  <slot>click_file_open_btn()</slot>
+ </slots>
+</ui>
