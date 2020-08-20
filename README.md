@@ -13,10 +13,12 @@ window환경에서의 sysmon log들을 winlogbeat를 통해 다른환경의 컴�
  3. network 상태가 바뀌었다면 winlogbeat.yml의 ip를 확인하라
  
 <details>
- ### <summary>Reference(CLICK)</summary> 
-:https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
+ ### <summary>Reference(CLICK)</summary>
+ 
+ https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 
 <div markdown="1">
+
 ### docker ELK와 sysmon 연동
 
 
