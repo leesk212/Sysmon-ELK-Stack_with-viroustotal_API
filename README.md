@@ -2,7 +2,7 @@
 Sysmon logs in the window environment are received from a computer in another environment through winlogbeat through Logstash, and then repositioned in Elasticsearch and displayed in PyQt.
 
 <details>
-<summary>-Timeline</summary>
+<summary>Timeline</summary>
  
 
 <div markdown="1">
