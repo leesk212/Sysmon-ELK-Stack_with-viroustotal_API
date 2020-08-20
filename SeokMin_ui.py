@@ -44,6 +44,8 @@ class Mywindow(QMainWindow,form_class):
         self.SuspectTable.clear()
         self.Prompt_of_fileopen.clear()
         self.whitelistbox.clear()
+        self.connected_host_list.clear()
+        self.BCB.clear()
 
         print('[log] clear')
 

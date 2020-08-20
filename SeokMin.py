@@ -1,5 +1,3 @@
-
-
 import viroustotal_API as Check_Hash
 import OpenWhiteList as openWhitelist
 import elasticsearch
