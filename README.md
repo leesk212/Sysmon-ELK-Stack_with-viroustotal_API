@@ -6,16 +6,17 @@ window환경에서의 sysmon log들을 winlogbeat를 통해 다른환경의 컴�
 ## 2020.08.19
  whitelist 함수 정의 및 구현
 ## 2020.08.20
-* 참조 업로드</br>
+* Upload Reference </br>
 * server에서 client의 값이 들어오지 않을때</br> 
  1. network 상태가 이전 상태와 같은지 확인하라
  2. network 상태가 같다면 ip의 변동이 있는지 확인하라
  3. network 상태가 바뀌었다면 winlogbeat.yml의 ip를 확인하라
-  
-### 참조 
+ 
+<details>
+ ### <summary>Reference(CLICK)</summary> 
 :https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 
-
+<div markdown="1">
 ### docker ELK와 sysmon 연동
 
 
@@ -160,3 +161,6 @@ PS> start-service winlogbeat
 * Docker, ELK: https://github.com/deviantony/docker-elk
 * winlogbeat: https://cyberwardog.blogspot.com/2017/02/setting-up-pentesting-i-mean-threat_87.html
 * ubuntu18 고정 IP 설정: https://www.manualfactory.net/10455
+
+</div>
+</details>
