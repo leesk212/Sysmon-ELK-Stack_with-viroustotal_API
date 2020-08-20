@@ -21,8 +21,6 @@ window환경에서의 sysmon log들을 winlogbeat를 통해 다른환경의 컴�
 2. logstash는 sysmon이벤트를 elasticsearch에 전달
 3. kibana로 elasticsearch의 데이터를 탐색
 
-![docker%20ELK%20sysmon/Untitled.png](docker%20ELK%20sysmon/Untitled.png)
-
 # 2. 서버설정
 * 서버 버전: ubuntu 18.04LTS </br>
 * docker, docker-compose 설치
