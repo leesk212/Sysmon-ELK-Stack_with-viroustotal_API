@@ -13,9 +13,8 @@ Sysmon logs in the window environment are received from a computer in another en
  3. network 상태가 바뀌었다면 winlogbeat.yml의 ip를 확인하라
  
 <details>
- ### <summary>Reference(CLICK)</summary>
+<summary>Reference(CLICK)</summary>
  
- https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 
 <div markdown="1">
 
@@ -159,6 +158,8 @@ PS> start-service winlogbeat
 ```
 
 ### 4. 참고자료
+* docker Sysmon-ELK: 
+ https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 * Docker, ELK: https://judo0179.tistory.com/60
 * Docker, ELK: https://github.com/deviantony/docker-elk
 * winlogbeat: https://cyberwardog.blogspot.com/2017/02/setting-up-pentesting-i-mean-threat_87.html
