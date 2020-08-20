@@ -1,5 +1,6 @@
 import viroustotal_API as Check_Hash
 import OpenWhiteList as openWhitelist
+import Make_timeline_format as make_timeline_format
 import elasticsearch
 es_client = elasticsearch.Elasticsearch("localhost:9200")
 
@@ -247,7 +248,7 @@ def find_last_100_logs(indice):
                 time.append(search_seventh['hits']['hits'][b]['_source']['winlog']['event_data']['UtcTime'])
                 event_id.append(search_seventh['hits']['hits'][b]['_source']['winlog']['event_id'])
                 event_action.append(search_seventh['hits']['hits'][b]['_source']['event']['action'])
-                if event_id[b] == 8 | event_id[b] == 6:
+                if event_id[b] == 8 or event_id[b] == 6:
                         event_data_processid.append("Default")
                         Image.append("Default")
                 else:
@@ -363,7 +364,7 @@ def find_PS_With_Hash_table_list(indice):
         return table
 
 def find_booting_start_time(indice):
-    boot_start_time_table=[]
+    boot_start_time_table=set()
     search_eleventh = es_client.search(
         index=indice,
         body={
@@ -381,13 +382,13 @@ def find_booting_start_time(indice):
     )
     total = len(search_eleventh['hits']['hits'])
     for f in range(0,total):
-        boot_start_time_table.append(search_eleventh['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
-
-    return boot_start_time_table
+        boot_start_time_table.add(search_eleventh['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
+    a = sorted(list(boot_start_time_table))
+    return a
 
 def find_booting_end_time(indice):
     boot_end_time_table=[]
-    search_tweleventh = es_client.search(
+    search_twelfth = es_client.search(
         index=indice,
         body={
             "sort": [
@@ -402,7 +403,53 @@ def find_booting_end_time(indice):
         }
 
     )
-    total = len(search_tweleventh['hits']['hits'])
+    total = len(search_twelfth['hits']['hits'])
     for f in range(total):
-        boot_end_time_table.append(search_tweleventh['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
+        boot_end_time_table.append(search_twelfth['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
     return boot_end_time_table
+
+
+def find_whitelist_based_on_time(indice, starttime, endtime):
+    whitelist = []
+    search_thirteenth = es_client.search(
+        index=indice,
+        body={
+            "sort": [
+                {"@timestamp": "desc"}
+            ],
+            "size": 300,
+            "query": {
+                "bool": {
+                    "filter": [
+                        {
+                            "match_all": {}
+                        },
+                        {
+                            "range": {
+                                "@timestamp": {
+                                    "gte": make_timeline_format.from_utctime(starttime),
+                                    "lte": make_timeline_format.from_utctime(endtime),
+                                    "format": "strict_date_optional_time"
+                                }
+                            }
+                        }
+                    ],
+                    "must": [
+                        {
+                            "match_phrase": {
+                                "winlog.event_id": "1"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    )
+    total = len(search_thirteenth['hits']['hits'])
+    for f in range(total):
+        whitelist.append([])
+        whitelist[f].append(search_thirteenth['hits']['hits'][f]['_source']['winlog']['event_data']['OriginalFileName'])
+        whitelist[f].append(search_thirteenth['hits']['hits'][f]['_source']['winlog']['event_data']['Hash'])
+
+    return whitelist
+
