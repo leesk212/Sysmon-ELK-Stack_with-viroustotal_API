@@ -2,11 +2,9 @@ import SeokMin as rs
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
-import pykorbit
-import time
 import json
 
-form_class = uic.loadUiType('/home/leekatme/바탕화면/start.ui')[0]
+form_class = uic.loadUiType('./SeokMin.ui')[0]
 
 class Mywindow(QMainWindow,form_class):
     def __init__(self,rs):
@@ -103,12 +101,16 @@ class Mywindow(QMainWindow,form_class):
             self.CEE.addItem("\t\t"+C_E_E[f])
 
         B_C_B = rs.find_booting_start_time(self.all_indices_view.currentItem().text())
-        self.BCB.addItem("Booting count: %d" %int(len(B_C_B)+1))
         first_booting_time = rs.find_access_time(self.all_indices_view.currentItem().text())
         self.booting_first_time = first_booting_time[first_booting_time.find("[")+1:first_booting_time.find("]")]
-        B_C_B.insert(0,self.booting_first_time)
+        if len(B_C_B) == 0 or B_C_B[0] != self.booting_first_time:
+            B_C_B.insert(0,self.booting_first_time)
+        self.BCB.addItem("Booting count: %d" %int(len(B_C_B)))
         for f in range(len(B_C_B)):
-            self.BCB.addItem("\t\t"+B_C_B[f])
+            self.BCB.addItem("\t  "+str(f+1)+". \t"+B_C_B[f])
+            self.STB.addItem(str(f+1)+".    "+B_C_B[f])
+
+
 
 
     def SearchBlackList(self):
