@@ -1,6 +1,12 @@
 # Sysmon-EL-PyQt
 Sysmon logs in the window environment are received from a computer in another environment through winlogbeat through Logstash, and then repositioned in Elasticsearch and displayed in PyQt.
 
+<details>
+<summary>-Timeline</summary>
+ 
+
+<div markdown="1">
+
 ## 2020.08.18 
  local -> git connected
 ## 2020.08.19
@@ -8,9 +14,12 @@ Sysmon logs in the window environment are received from a computer in another en
 ## 2020.08.20
 * Upload Reference </br>
 * server에서 client의 값이 들어오지 않을때</br> 
- 1. network 상태가 이전 상태와 같은지 확인하라
- 2. network 상태가 같다면 ip의 변동이 있는지 확인하라
- 3. network 상태가 바뀌었다면 winlogbeat.yml의 ip를 확인하라
+ 1. network 상태가 이전 상태와 같은지 확인
+ 2. network 상태가 같다면 ip의 변동이 있는지 확인
+ 3. network 상태가 바뀌었다면 winlogbeat.yml의 ip를 확인
+* Upload ui file
+
+
  
 <details>
 <summary>Reference(CLICK)</summary>
@@ -165,5 +174,7 @@ PS> start-service winlogbeat
 * winlogbeat: https://cyberwardog.blogspot.com/2017/02/setting-up-pentesting-i-mean-threat_87.html
 * ubuntu18 고정 IP 설정: https://www.manualfactory.net/10455
 
+</div>
+</details>
 </div>
 </details>
