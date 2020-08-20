@@ -380,7 +380,7 @@ def find_booting_start_time(indice):
 
     )
     total = len(search_eleventh['hits']['hits'])
-    for f in range(total):
+    for f in range(0,total):
         boot_start_time_table.append(search_eleventh['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
 
     return boot_start_time_table

@@ -20,6 +20,7 @@ class Mywindow(QMainWindow,form_class):
         self.insertFile.clicked.connect(self.pushButtonClicked)
         self.WhiteList = []
         self.BlackList = []
+        self.booting_first_time = []
     
     def pushButtonClicked(self):
         print('[log]pushbtnclicked fname')
@@ -102,7 +103,10 @@ class Mywindow(QMainWindow,form_class):
             self.CEE.addItem("\t\t"+C_E_E[f])
 
         B_C_B = rs.find_booting_start_time(self.all_indices_view.currentItem().text())
-        self.BCB.addItem("Booting count: %d" %len(B_C_B))
+        self.BCB.addItem("Booting count: %d" %int(len(B_C_B)+1))
+        first_booting_time = rs.find_access_time(self.all_indices_view.currentItem().text())
+        self.booting_first_time = first_booting_time[first_booting_time.find("[")+1:first_booting_time.find("]")]
+        B_C_B.insert(0,self.booting_first_time)
         for f in range(len(B_C_B)):
             self.BCB.addItem("\t\t"+B_C_B[f])
 
