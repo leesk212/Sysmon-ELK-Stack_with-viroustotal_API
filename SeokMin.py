@@ -133,11 +133,11 @@ def find_most_running_process(indice):
                                 "order": {
                                     "_count": "desc"
                                 },
-                                "size": 5
+                                "size": 10
                                  }
                                 }
                             },
-                            "size": 5,
+                            "size": 10,
                             "query": {
                                 "match_phrase": {
                                 "winlog.event_id": 1
@@ -145,13 +145,14 @@ def find_most_running_process(indice):
                             }
                         }
         )
-        for b in range(0,5):
+        total = len(search_sixth['hits']['hits'])
+        for b in range(0,total):
                 orginalFilename.append(search_sixth['hits']['hits'][b]['_source']['winlog']['event_data']['OriginalFileName'])
                 time.append(search_sixth['hits']['hits'][b]['_source']['winlog']['event_data']['UtcTime'])
                 count.append(search_sixth['aggregations']['2']['buckets'][b]['doc_count'])
                 processid.append(search_sixth['aggregations']['2']['buckets'][b]['key'])
         
-        for b in range(0,5):
+        for b in range(0,total):
                 return_value.append(
                        " ["
                         +time[b]
@@ -189,11 +190,11 @@ def find_most_closing_process(indice):
                                 "order": {
                                     "_count": "desc"
                                 },
-                                "size": 5
+                                "size": 10
                                  }
                                 }
                             },
-                            "size": 5,
+                            "size": 10,
                             "query": {
                                 "match_phrase": {
                                 "winlog.event_id": 5
@@ -387,7 +388,7 @@ def find_booting_start_time(indice):
     return a
 
 def find_booting_end_time(indice):
-    boot_end_time_table=[]
+    boot_end_time_table=set()
     search_twelfth = es_client.search(
         index=indice,
         body={
@@ -405,12 +406,13 @@ def find_booting_end_time(indice):
     )
     total = len(search_twelfth['hits']['hits'])
     for f in range(total):
-        boot_end_time_table.append(search_twelfth['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
-    return boot_end_time_table
+        boot_end_time_table.add(search_twelfth['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
+    return sorted(list(boot_end_time_table))
 
 
 def find_whitelist_based_on_time(indice, starttime, endtime):
-    whitelist = []
+    whitelists = []
+    Hash = set()
     search_thirteenth = es_client.search(
         index=indice,
         body={
@@ -447,9 +449,12 @@ def find_whitelist_based_on_time(indice, starttime, endtime):
     )
     total = len(search_thirteenth['hits']['hits'])
     for f in range(total):
-        whitelist.append([])
-        whitelist[f].append(search_thirteenth['hits']['hits'][f]['_source']['winlog']['event_data']['OriginalFileName'])
-        whitelist[f].append(search_thirteenth['hits']['hits'][f]['_source']['winlog']['event_data']['Hash'])
+        Filename_Hash_box = []
+        Filename_Hash_box.append(search_thirteenth['hits']['hits'][f]['_source']['winlog']['event_data']['OriginalFileName'])
+        Hash = search_thirteenth['hits']['hits'][f]['_source']['winlog']['event_data']['Hashes']
+        Filename_Hash_box.append(Hash[3:Hash.find(",")])
+        whitelists.append(Filename_Hash_box)
 
-    return whitelist
+    whitelists = list(set([tuple(set(whitelist)) for whitelist in whitelists]))
+    return whitelists
 

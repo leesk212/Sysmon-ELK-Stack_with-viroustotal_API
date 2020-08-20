@@ -13,6 +13,10 @@ class Mywindow(QMainWindow,form_class):
         self.count = 0
         self.all_indicies = rs.all_indicies
         self.all_indices_view.itemClicked.connect(self.indices_list_click) #? 확인
+        self.STB.itemClicked.connect(self.click_whitelist_tab_start_time_list) #? 확인
+        self.ETB.itemClicked.connect(self.click_whitelist_tab_end_time_list) #? 확인
+        self.starttime =[]
+        self.endtime = []
         self.Whole_PS_With_Hash_Table = []
         self.Check_Hash_return_data = {}
         self.insertFile.clicked.connect(self.pushButtonClicked)
@@ -24,12 +28,13 @@ class Mywindow(QMainWindow,form_class):
         print('[log]pushbtnclicked fname')
         fname = QFileDialog.getOpenFileName(self)
         self.Prompt_of_fileopen.setText(fname[0])
-        self.WhiteList = rs.openWhitelist.OpenWhiteList(fname[0])
+        self.WhiteList = rs.openWhitelist.to_make_whitelist(fname[0])
         for f in range(0,len(self.WhiteList)):
             self.whitelistbox.addItem(self.WhiteList[f][0])
 
 
     def click_btn1(self):
+        print('[log] clear')
         self.DNS.clear()
         self.IP.clear()
         self.hostname.clear()
@@ -45,15 +50,17 @@ class Mywindow(QMainWindow,form_class):
         self.whitelistbox.clear()
         self.connected_host_list.clear()
         self.BCB.clear()
+        self.STB.clear()
+        self.ETB.clear()
+        self.PW.clear()
 
-        print('[log] clear')
 
     def inqury(self):
+        print('[log] indices search ')
         self.all_indices_view.clear()
         for f in self.all_indicies:
             self.all_indices_view.addItem(f)
         count = self.count
-        print('[log] indices search ')
         self.count = self.count +1
     
     def indices_list_click(self):
@@ -110,7 +117,29 @@ class Mywindow(QMainWindow,form_class):
             self.BCB.addItem("\t  "+str(f+1)+". \t"+B_C_B[f])
             self.STB.addItem(str(f+1)+".    "+B_C_B[f])
 
+        E_T_B = rs.find_booting_end_time(self.all_indices_view.currentItem().text())
+        for f in range(len(E_T_B)):
+            self.ETB.addItem(str(f+1)+".    "+E_T_B[f])
 
+    def click_whitelist_tab_start_time_list(self):
+        starttime = self.STB.currentItem().text()
+        s_count,starttime = map(str,starttime.split(".    "))
+        self.starttime = starttime
+
+    def click_whitelist_tab_end_time_list(self):
+        endtime = self.ETB.currentItem().text()
+        e_count,endtime = map(str,endtime.split(".    "))
+        self.endtime = endtime
+        whitelist = rs.find_whitelist_based_on_time(self.all_indices_view.currentItem().text(),self.starttime,endtime)
+        for f in range(len(whitelist)):
+                if whitelist[f][1].find("=") == 0:
+                    filename = whitelist[f][0]
+                    hash = whitelist[f][1]
+                else:
+                    filename = whitelist[f][1]
+                    hash = whitelist[f][0]
+#                self.WhiteList.append("Filename="+filename+"/Hash"+hash)
+                self.PW.addItem("Filename="+filename+"/Hash"+hash)
 
 
     def SearchBlackList(self):
