@@ -1,4 +1,4 @@
-def OpenWhiteList(filedirectory):
+def to_make_whitelist(filedirectory):
     whitelist = []
     f = open(filedirectory,"rt")
     while True:
