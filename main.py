@@ -1,6 +1,7 @@
 import SeokMin_ui as SKM
 
-app = SKM.QApplication(SKM.sys.argv)
-window = SKM.Mywindow(SKM.rs)
-window.show()
-app.exec_()
+if __name__ == '__main__':
+    app = SKM.QApplication(SKM.sys.argv)
+    window = SKM.Mywindow(SKM.rs)
+    window.show()
+    app.exec_()
