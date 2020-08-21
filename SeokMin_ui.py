@@ -10,6 +10,7 @@ class Mywindow(QMainWindow,form_class):
     def __init__(self,rs):
         super().__init__()
         self.setupUi(self)
+        self.setWindowTitle('Sysmon-EL-PyQt')
 
         self.count = 0
         self.all_indicies = rs.all_indicies
