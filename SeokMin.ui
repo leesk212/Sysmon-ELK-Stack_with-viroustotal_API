@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -263,7 +263,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>210</y>
+        <y>250</y>
         <width>801</width>
         <height>261</height>
        </rect>
@@ -285,7 +285,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>520</y>
+        <y>540</y>
         <width>801</width>
         <height>271</height>
        </rect>
@@ -307,7 +307,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>190</y>
+        <y>230</y>
         <width>801</width>
         <height>16</height>
        </rect>
@@ -323,7 +323,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>500</y>
+        <y>520</y>
         <width>801</width>
         <height>16</height>
        </rect>
@@ -339,8 +339,8 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>100</y>
-        <width>801</width>
+        <y>90</y>
+        <width>401</width>
         <height>16</height>
        </rect>
       </property>
@@ -349,16 +349,6 @@
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>120</y>
-        <width>801</width>
-        <height>31</height>
-       </rect>
       </property>
      </widget>
      <widget class="QLabel" name="label_29">
@@ -376,6 +366,94 @@
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>85</y>
+        <width>401</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>current_found_time of logs</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>150</y>
+        <width>801</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>abnormal behaviortime</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>110</y>
+        <width>801</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QTextEdit" name="IAT">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <italic>true</italic>
+          </font>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:italic;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;[YYYY-MM-DD HH:MM:SS] ~ [YYYY-MM-DD HH:MM:SS]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="CFT">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <italic>true</italic>
+          </font>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:italic;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-style:normal;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QTextEdit" name="AB">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>170</y>
+        <width>801</width>
+        <height>31</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -677,7 +755,7 @@
      <widget class="QToolButton" name="insertFile">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>30</x>
         <y>90</y>
         <width>31</width>
         <height>31</height>
@@ -690,9 +768,9 @@
      <widget class="QTextBrowser" name="Prompt_of_fileopen">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>60</x>
         <y>90</y>
-        <width>491</width>
+        <width>521</width>
         <height>31</height>
        </rect>
       </property>
@@ -709,7 +787,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>590</x>
         <y>90</y>
-        <width>281</width>
+        <width>291</width>
         <height>31</height>
        </rect>
       </property>
@@ -920,7 +998,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>20</y>
+        <y>10</y>
         <width>821</width>
         <height>51</height>
        </rect>

@@ -89,6 +89,8 @@ class Mywindow(QMainWindow,form_class):
         self.hostname.setText(rs.find_host_name(self.all_indices_view.currentItem().text()))
         
         self.Accesstime.setText(rs.find_access_time(self.all_indices_view.currentItem().text()))
+        self.CFT.setText(rs.find_access_time(self.all_indices_view.currentItem().text()))
+
         self.connected_host_list.addItem(rs.find_host_name(self.all_indices_view.currentItem().text()))
         self.DNS.addItem("================================================================")
         DNS = rs.find_dns(self.all_indices_view.currentItem().text())
