@@ -18,7 +18,9 @@ Sysmon logs in the window environment are received from a computer in another en
  2. network 상태가 같다면 ip의 변동이 있는지 확인
  3. network 상태가 바뀌었다면 winlogbeat.yml의 ip를 확인
 * Upload ui file
-
+## 2020.08.21
+* Update Whitelist 이외의 layout 구현 완료
+* Error 찾는중 1번 실행은 잘 되지만 clear이후 2번실행은 값이 변하지 않는 것이 발견됌
 
  
 
