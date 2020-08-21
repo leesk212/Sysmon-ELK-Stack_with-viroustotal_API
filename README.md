@@ -3,7 +3,7 @@ Sysmon logs in the window environment are received from a computer in another en
 
 <details>
 <summary>Timeline</summary>
- 
+
 
 <div markdown="1">
 
@@ -21,6 +21,10 @@ Sysmon logs in the window environment are received from a computer in another en
 
 
  
+
+</div>
+</details>
+
 <details>
 <summary>Reference(CLICK)</summary>
  
@@ -174,7 +178,5 @@ PS> start-service winlogbeat
 * winlogbeat: https://cyberwardog.blogspot.com/2017/02/setting-up-pentesting-i-mean-threat_87.html
 * ubuntu18 고정 IP 설정: https://www.manualfactory.net/10455
 
-</div>
-</details>
 </div>
 </details>
