@@ -1,7 +1,6 @@
 import SeokMin as rs
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
 from PyQt5 import uic
 import json
 
@@ -229,10 +228,7 @@ class Mywindow(QMainWindow,form_class):
         QMessageBox.about(self, "Success", "Success to export Whitelist")
 
 
-app = QApplication(sys.argv)
-window = Mywindow(rs)
-window.show()
-app.exec_()
+
 
 
 
