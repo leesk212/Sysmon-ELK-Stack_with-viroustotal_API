@@ -40,6 +40,22 @@ class Mywindow(QMainWindow,form_class):
 
     def click_btn1(self):
         print('[log] clear')
+        del self.starttime
+        del self.endtime
+        del self.Whole_PS_With_Hash_Table
+        del self.Check_Hash_return_data
+        del self.WhiteList
+        del self.BlackList
+        del self.booting_first_time
+
+        self.starttime = []
+        self.endtime = []
+        self.Whole_PS_With_Hash_Table = []
+        self.Check_Hash_return_data = {}
+        self.WhiteList = []
+        self.BlackList = []
+        self.booting_first_time = []
+
         self.DNS.clear()
         self.IP.clear()
         self.hostname.clear()
@@ -209,6 +225,7 @@ class Mywindow(QMainWindow,form_class):
             self.indices_list_click()
 
     def onButtonClicked(self):
+        rs.openWhitelist.to_make_whitelist_in_local_directory('./',self.WhiteList)
         QMessageBox.about(self, "Success", "Success to export Whitelist")
 
 
