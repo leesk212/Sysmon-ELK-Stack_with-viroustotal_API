@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1311</width>
-    <height>939</height>
+    <width>1313</width>
+    <height>917</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -425,11 +425,11 @@
        <enum>QListView::ListMode</enum>
       </property>
      </widget>
-     <widget class="QPushButton" name="SBL_3">
+     <widget class="QPushButton" name="EWB">
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>760</y>
+        <y>750</y>
         <width>771</width>
         <height>31</height>
        </rect>
@@ -887,24 +887,6 @@ p, li { white-space: pre-wrap; }
    <zorder>layoutWidget</zorder>
    <zorder>tabWidget</zorder>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1311</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>file</string>
-    </property>
-    <addaction name="actionB_txt"/>
-    <addaction name="actionC_txt"/>
-   </widget>
-   <addaction name="menuFile"/>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAsdfasd">
    <property name="text">
@@ -1150,5 +1132,6 @@ p, li { white-space: pre-wrap; }
   <slot>click_suspected_process_box()</slot>
   <slot>click_list_of_vaccines_box()</slot>
   <slot>click_file_open_btn()</slot>
+  <slot>click_export_whitelist_btn()</slot>
  </slots>
 </ui>

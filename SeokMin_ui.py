@@ -1,6 +1,7 @@
 import SeokMin as rs
 import sys
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 from PyQt5 import uic
 import json
 
@@ -10,19 +11,23 @@ class Mywindow(QMainWindow,form_class):
     def __init__(self,rs):
         super().__init__()
         self.setupUi(self)
+
         self.count = 0
         self.all_indicies = rs.all_indicies
-        self.all_indices_view.itemClicked.connect(self.indices_list_click) #? 확인
-        self.STB.itemClicked.connect(self.click_whitelist_tab_start_time_list) #? 확인
-        self.ETB.itemClicked.connect(self.click_whitelist_tab_end_time_list) #? 확인
+
         self.starttime =[]
         self.endtime = []
         self.Whole_PS_With_Hash_Table = []
         self.Check_Hash_return_data = {}
-        self.insertFile.clicked.connect(self.pushButtonClicked)
         self.WhiteList = []
         self.BlackList = []
         self.booting_first_time = []
+
+        self.all_indices_view.itemClicked.connect(self.indices_list_click) #? 확인
+        self.STB.itemClicked.connect(self.click_whitelist_tab_start_time_list) #? 확인
+        self.ETB.itemClicked.connect(self.click_whitelist_tab_end_time_list) #? 확인
+        self.EWB.clicked.connect(self.onButtonClicked)
+        self.insertFile.clicked.connect(self.pushButtonClicked)
     
     def pushButtonClicked(self):
         print('[log]pushbtnclicked fname')
@@ -138,9 +143,8 @@ class Mywindow(QMainWindow,form_class):
                 else:
                     filename = whitelist[f][1]
                     hash = whitelist[f][0]
-#                self.WhiteList.append("Filename="+filename+"/Hash"+hash)
+                self.WhiteList.append("Filename="+filename+"/Hash"+hash)
                 self.PW.addItem("Filename="+filename+"/Hash"+hash)
-
 
     def SearchBlackList(self):
         self.viroustotal_API_Result.clear()
@@ -193,7 +197,8 @@ class Mywindow(QMainWindow,form_class):
         )
         result = '%s' %result
         self.viroustotal_API_Result.addItem(
-            "["+self.viroustotal_API.currentItem().text()+"]\n"+
+            "["+
+            self.viroustotal_API.currentItem().text()+"]\n"+
             result
         )
 
@@ -202,7 +207,10 @@ class Mywindow(QMainWindow,form_class):
         if(self.count!=0):
             self.click_btn1()
             self.indices_list_click()
- 
+
+    def onButtonClicked(self):
+        QMessageBox.about(self, "Success", "Success to export Whitelist")
+
 
 app = QApplication(sys.argv)
 window = Mywindow(rs)
