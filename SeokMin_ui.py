@@ -32,6 +32,7 @@ class Mywindow(QMainWindow, form_class):
         self.insertFile.clicked.connect(self.pushButtonClicked)
 
     def view_connected_list(self):
+        print("[log] Clicked" + "__" + self.all_indices_view.currentItem().text())
         self.connected_host_list.addItem(rs.find_host_name(self.all_indices_view.currentItem().text()))
 
 
@@ -91,7 +92,7 @@ class Mywindow(QMainWindow, form_class):
         self.count = self.count + 1
 
     def indices_list_click(self):
-        print("[log] Clicked" + "__" + self.all_indices_view.currentItem().text())
+        print('[log] Clicked__'+rs.find_host_name(self.all_indices_view.currentItem().text()))
 
         self.hostname.setText(rs.find_host_name(self.all_indices_view.currentItem().text()))
 
@@ -158,11 +159,13 @@ class Mywindow(QMainWindow, form_class):
 
 
     def click_whitelist_tab_start_time_list(self):
+        print("[log] wl_start_time_list")
         starttime = self.STB.currentItem().text()
         s_count, starttime = map(str, starttime.split(".    "))
         self.starttime = starttime
 
     def click_whitelist_tab_end_time_list(self):
+        print("[log] wl_end_time_list")
         endtime = self.ETB.currentItem().text()
         e_count, endtime = map(str, endtime.split(".    "))
         self.endtime = endtime
@@ -240,12 +243,15 @@ class Mywindow(QMainWindow, form_class):
             self.indices_list_click()
 
     def onButtonClicked(self):
+        print("[log] onButtonClicked")
         rs.openWhitelist.to_make_whitelist_in_local_directory('./', self.WhiteList)
         QMessageBox.about(self, "Success", "Success to export Whitelist")
 
     def click_search_abnormal_time_btn(self):
-
+        print("[log] click_search_abnormal_time_btn")
+        self.LOB.clear()
         self.AB.clear()
+        self.CRH.clear()
         Access_time = self.IAT.toPlainText()
         whole_time = rs.find_access_time(self.all_indices_view.currentItem().text())
 
