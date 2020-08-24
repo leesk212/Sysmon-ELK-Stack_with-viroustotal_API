@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -259,18 +259,18 @@
      <attribute name="title">
       <string>Abnormal Behavior</string>
      </attribute>
-     <widget class="QListWidget" name="all_indices_view_2">
+     <widget class="QListWidget" name="LOB">
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>300</y>
+        <y>250</y>
         <width>801</width>
-        <height>231</height>
+        <height>391</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>9</pointsize>
         <italic>true</italic>
        </font>
       </property>
@@ -279,57 +279,19 @@
       </property>
       <property name="viewMode">
        <enum>QListView::ListMode</enum>
-      </property>
-     </widget>
-     <widget class="QListWidget" name="all_indices_view_3">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>570</y>
-        <width>801</width>
-        <height>221</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="viewMode">
-       <enum>QListView::ListMode</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_25">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>280</y>
-        <width>801</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>After the specified time, turn on the pc and run resume.hwp</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_26">
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>550</y>
+        <y>230</y>
         <width>801</width>
-        <height>16</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>After the specified time, turn on the pc and access the usb</string>
+       <string>Logs of abnormal behavior time </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -339,7 +301,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>120</y>
+        <y>100</y>
         <width>311</width>
         <height>16</height>
        </rect>
@@ -372,13 +334,13 @@
       <property name="geometry">
        <rect>
         <x>540</x>
-        <y>120</y>
+        <y>100</y>
         <width>311</width>
         <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>current_found_time of logs</string>
+       <string>Current_found_time of logs</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -388,13 +350,13 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>200</y>
+        <y>160</y>
         <width>801</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>abnormal behavior time</string>
+       <string>Abnormal behavior time</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -404,7 +366,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>140</y>
+        <y>120</y>
         <width>801</width>
         <height>31</height>
        </rect>
@@ -457,10 +419,48 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>220</y>
+        <y>180</y>
         <width>801</width>
         <height>31</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>660</y>
+        <width>801</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>After the specified time, create and run resume.hwp</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="all_indices_view_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>680</y>
+        <width>801</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QListView::ListMode</enum>
       </property>
      </widget>
     </widget>
@@ -757,7 +757,7 @@ p, li { white-space: pre-wrap; }
     </widget>
     <widget class="QWidget" name="tabWidgetPage2">
      <attribute name="title">
-      <string>Search BlackList</string>
+      <string>Inspect BlackList</string>
      </attribute>
      <widget class="QToolButton" name="insertFile">
       <property name="geometry">
@@ -998,7 +998,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="text">
-       <string>Search BlackList 
+       <string>Inspect BlackList 
  [by Viroustotal_API]</string>
       </property>
       <property name="alignment">

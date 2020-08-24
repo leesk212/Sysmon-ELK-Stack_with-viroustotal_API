@@ -24,11 +24,16 @@ class Mywindow(QMainWindow, form_class):
         self.BlackList = []
         self.booting_first_time = []
 
-        self.all_indices_view.itemClicked.connect(self.indices_list_click)  # ? 확인
+        self.all_indices_view.itemClicked.connect(self.view_connected_list)
+        self.connected_host_list.itemClicked.connect(self.indices_list_click)  # ? 확인
         self.STB.itemClicked.connect(self.click_whitelist_tab_start_time_list)  # ? 확인
         self.ETB.itemClicked.connect(self.click_whitelist_tab_end_time_list)  # ? 확인
         self.EWB.clicked.connect(self.onButtonClicked)
         self.insertFile.clicked.connect(self.pushButtonClicked)
+
+    def view_connected_list(self):
+        self.connected_host_list.addItem(rs.find_host_name(self.all_indices_view.currentItem().text()))
+
 
     def pushButtonClicked(self):
         print('[log]pushbtnclicked fname')
@@ -74,6 +79,8 @@ class Mywindow(QMainWindow, form_class):
         self.STB.clear()
         self.ETB.clear()
         self.PW.clear()
+        self.LOB.clear()
+        self.AB.clear()
 
     def inqury(self):
         print('[log] indices search ')
@@ -90,8 +97,8 @@ class Mywindow(QMainWindow, form_class):
 
         self.Accesstime.setText(rs.find_access_time(self.all_indices_view.currentItem().text()))
         self.CFT.setText(rs.find_access_time(self.all_indices_view.currentItem().text()))
+        self.IAT.setText(rs.find_access_time(self.all_indices_view.currentItem().text()))
 
-        self.connected_host_list.addItem(rs.find_host_name(self.all_indices_view.currentItem().text()))
         self.DNS.addItem("================================================================")
         DNS = rs.find_dns(self.all_indices_view.currentItem().text())
         for f in range(0, len(DNS)):
@@ -148,6 +155,7 @@ class Mywindow(QMainWindow, form_class):
         E_T_B = rs.find_booting_end_time(self.all_indices_view.currentItem().text())
         for f in range(len(E_T_B)):
             self.ETB.addItem(str(f + 1) + ".    " + E_T_B[f])
+
 
     def click_whitelist_tab_start_time_list(self):
         starttime = self.STB.currentItem().text()
@@ -236,6 +244,7 @@ class Mywindow(QMainWindow, form_class):
         QMessageBox.about(self, "Success", "Success to export Whitelist")
 
     def click_search_abnormal_time_btn(self):
+
         self.AB.clear()
         Access_time = self.IAT.toPlainText()
         whole_time = rs.find_access_time(self.all_indices_view.currentItem().text())
@@ -246,12 +255,31 @@ class Mywindow(QMainWindow, form_class):
         whole_time_start = whole_time[whole_time.find('[')+1:whole_time.find(']')]
         whole_time_end = whole_time[whole_time.find('[', whole_time.find('~'))+1:whole_time.find(']', whole_time.find('~'))]
 
+        Abnormal_times = []
+
         if Access_time_start > whole_time_start:
-            self.AB.insertPlainText('Pretime: ['+whole_time_start + " ~ " +Access_time_start +']')
+            self.AB.insertPlainText('Pre_time: ['+whole_time_start + " ~ " +Access_time_start +']\t')
+            Abnormal_time = []
+            Abnormal_time.append(whole_time_start)
+            Abnormal_time.append(Access_time_start)
+            Abnormal_times.append(Abnormal_time)
             print(Access_time_start + " ~ " + whole_time_start)
 
         if Access_time_end < whole_time_end:
-            self.AB.insertPlainText('Posttime: ['+Access_time_end + ' ~ ' + whole_time_end+']')
+            self.AB.insertPlainText('Post_time: ['+Access_time_end + ' ~ ' + whole_time_end+']')
+            Abnormal_time = []
+            Abnormal_time.append(Access_time_end)
+            Abnormal_time.append(whole_time_end)
+            Abnormal_times.append(Abnormal_time)
             print(Access_time_end + ' ~ ' + whole_time_end)
-
         self.AB.setStyleSheet("Color: red")
+
+        for Abnormal_time in Abnormal_times:
+            L_O_B = rs.find_abnormal_logs(self.all_indices_view.currentItem().text(),Abnormal_time[0],Abnormal_time[1])
+            for f in range(0, len(L_O_B)):
+                self.LOB.addItem("[" + str(f + 1) + "]")
+                self.LOB.addItem(L_O_B[f])
+            self.LOB.addItem(
+                "====================================================================================================================================================================================")
+            self.LOB.addItem("\n")
+

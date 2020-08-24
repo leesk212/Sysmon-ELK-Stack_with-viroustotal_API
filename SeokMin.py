@@ -423,7 +423,6 @@ def find_booting_end_time(indice):
 
 def find_whitelist_based_on_time(indice, starttime, endtime):
     whitelists = []
-    Hash = set()
     search_thirteenth = es_client.search(
         index=indice,
         body={
@@ -469,3 +468,76 @@ def find_whitelist_based_on_time(indice, starttime, endtime):
 
     whitelists = list(set([tuple(set(whitelist)) for whitelist in whitelists]))
     return whitelists
+
+
+def find_abnormal_created_hwp_file(indice):
+    pass
+
+
+def find_abnormal_logs(indice, starttime, endtime):
+    event_id = []
+    event_action = []
+    event_data_processid = []
+    time = []
+    Image = []
+    return_value = []
+    search_fourteen = es_client.search(
+        index=indice,
+        body={
+            "sort": [
+                {"@timestamp": "desc"}
+            ],
+            "size": 300,
+            "query": {
+                "bool": {
+                    "filter": [
+                        {
+                            "match_all": {}
+                        },
+                        {
+                            "range": {
+                                "@timestamp": {
+                                    "gte": make_timeline_format.from_utctime(starttime),
+                                    "lte": make_timeline_format.from_utctime(endtime),
+                                    "format": "strict_date_optional_time"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    )
+    total = len(search_fourteen['hits']['hits'])
+    for b in range(0, total):
+        time.append(search_fourteen['hits']['hits'][b]['_source']['winlog']['event_data']['UtcTime'])
+        event_id.append(search_fourteen['hits']['hits'][b]['_source']['winlog']['event_id'])
+        event_action.append(search_fourteen['hits']['hits'][b]['_source']['event']['action'])
+        if event_id[b] == 8 or event_id[b] == 6:
+            event_data_processid.append("Default")
+            Image.append("Default")
+        else:
+            event_data_processid.append(
+                search_fourteen['hits']['hits'][b]['_source']['winlog']['event_data']['ProcessId'])
+            Image.append(search_fourteen['hits']['hits'][b]['_source']['winlog']['event_data']['Image'])
+
+    for b in range(0, total):
+        return_value.append(
+            " ["
+            + time[b]
+            + "] "
+            + "[ EventID: "
+            + str(event_id[b])
+            + "]"
+            + ": "
+            + event_action[b]
+            + "\n"
+            + "\t                     [ ProcessID: "
+            + event_data_processid[b]
+            + "] \n"
+            + "\t                     [ Image: "
+            + Image[b]
+            + "]"
+        )
+
+    return return_value
