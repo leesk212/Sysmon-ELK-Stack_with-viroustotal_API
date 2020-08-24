@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1309</width>
+    <width>1290</width>
     <height>899</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -230,7 +230,7 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>10</y>
+        <y>20</y>
         <width>831</width>
         <height>51</height>
        </rect>
@@ -263,9 +263,9 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>250</y>
+        <y>300</y>
         <width>801</width>
-        <height>261</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="font">
@@ -285,9 +285,9 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>540</y>
+        <y>570</y>
         <width>801</width>
-        <height>271</height>
+        <height>221</height>
        </rect>
       </property>
       <property name="font">
@@ -307,7 +307,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>230</y>
+        <y>280</y>
         <width>801</width>
         <height>16</height>
        </rect>
@@ -323,7 +323,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>520</y>
+        <y>550</y>
         <width>801</width>
         <height>16</height>
        </rect>
@@ -339,8 +339,8 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>95</y>
-        <width>401</width>
+        <y>120</y>
+        <width>311</width>
         <height>16</height>
        </rect>
       </property>
@@ -355,7 +355,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>10</y>
+        <y>20</y>
         <width>801</width>
         <height>51</height>
        </rect>
@@ -371,9 +371,9 @@
      <widget class="QLabel" name="label_32">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>90</y>
-        <width>401</width>
+        <x>540</x>
+        <y>120</y>
+        <width>311</width>
         <height>21</height>
        </rect>
       </property>
@@ -388,13 +388,13 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>160</y>
+        <y>200</y>
         <width>801</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>abnormal behaviortime</string>
+       <string>abnormal behavior time</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -404,7 +404,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>110</y>
+        <y>140</y>
         <width>801</width>
         <height>31</height>
        </rect>
@@ -424,6 +424,13 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:italic;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;[YYYY-MM-DD HH:MM:SS] ~ [YYYY-MM-DD HH:MM:SS]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>Seach abnormal time</string>
          </property>
         </widget>
        </item>
@@ -450,7 +457,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>180</y>
+        <y>220</y>
         <width>801</width>
         <height>31</height>
        </rect>
@@ -565,7 +572,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>10</y>
+        <y>20</y>
         <width>821</width>
         <height>51</height>
        </rect>
@@ -678,7 +685,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>9</y>
+        <y>20</y>
         <width>771</width>
         <height>51</height>
        </rect>
@@ -881,7 +888,7 @@ p, li { white-space: pre-wrap; }
         <x>300</x>
         <y>190</y>
         <width>361</width>
-        <height>571</height>
+        <height>621</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -934,7 +941,7 @@ p, li { white-space: pre-wrap; }
         <x>690</x>
         <y>190</y>
         <width>191</width>
-        <height>571</height>
+        <height>621</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -981,24 +988,11 @@ p, li { white-space: pre-wrap; }
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="SBL_2">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>780</y>
-        <width>581</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Update WhiteList</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_31">
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>10</y>
+        <y>20</y>
         <width>821</width>
         <height>51</height>
        </rect>
@@ -1286,7 +1280,7 @@ p, li { white-space: pre-wrap; }
      <y>114</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1194</x>
+     <x>1001</x>
      <y>42</y>
     </hint>
    </hints>
@@ -1298,11 +1292,11 @@ p, li { white-space: pre-wrap; }
    <slot>SearchBlackList()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1083</x>
-     <y>101</y>
+     <x>1085</x>
+     <y>141</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1108</x>
+     <x>1001</x>
      <y>46</y>
     </hint>
    </hints>
@@ -1346,12 +1340,28 @@ p, li { white-space: pre-wrap; }
    <slot>click_file_open_btn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>676</x>
-     <y>101</y>
+     <x>678</x>
+     <y>141</y>
     </hint>
     <hint type="destinationlabel">
      <x>307</x>
      <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_search_abnormal_time_btn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>816</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1001</x>
+     <y>14</y>
     </hint>
    </hints>
   </connection>
@@ -1369,5 +1379,6 @@ p, li { white-space: pre-wrap; }
   <slot>click_list_of_vaccines_box()</slot>
   <slot>click_file_open_btn()</slot>
   <slot>click_export_whitelist_btn()</slot>
+  <slot>click_search_abnormal_time_btn()</slot>
  </slots>
 </ui>
