@@ -339,7 +339,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>90</y>
+        <y>95</y>
         <width>401</width>
         <height>16</height>
        </rect>
@@ -372,7 +372,7 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>85</y>
+        <y>90</y>
         <width>401</width>
         <height>21</height>
        </rect>
@@ -388,7 +388,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>150</y>
+        <y>160</y>
         <width>801</width>
         <height>20</height>
        </rect>
@@ -406,7 +406,7 @@
         <x>50</x>
         <y>110</y>
         <width>801</width>
-        <height>77</height>
+        <height>31</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -450,7 +450,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>170</y>
+        <y>180</y>
         <width>801</width>
         <height>31</height>
        </rect>
