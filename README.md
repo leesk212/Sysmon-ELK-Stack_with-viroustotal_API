@@ -162,6 +162,7 @@ PS> .\winlogbeat.exe -c .\winlogbeat.yml
 #### 3.3 sysmon 실행
 ```
 PS> .\sysmon.exe -i [sysmon설정파일.xml]
+PS> .\sysmon.exe -c [sysmon 업데이트 파일.
 ```
 * 설정파일이 없으면 https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml 다운받아 사용
 
