@@ -247,10 +247,11 @@ class Mywindow(QMainWindow, form_class):
         whole_time_end = whole_time[whole_time.find('[', whole_time.find('~'))+1:whole_time.find(']', whole_time.find('~'))]
 
         if Access_time_start > whole_time_start:
-            self.AB.insertPlainText('['+whole_time_start + " ~ " +Access_time_start +']')
+            self.AB.insertPlainText('Pretime: ['+whole_time_start + " ~ " +Access_time_start +']')
             print(Access_time_start + " ~ " + whole_time_start)
 
         if Access_time_end < whole_time_end:
-            self.AB.insertPlainText('['+Access_time_end + ' ~ ' + whole_time_end+']')
+            self.AB.insertPlainText('Posttime: ['+Access_time_end + ' ~ ' + whole_time_end+']')
             print(Access_time_end + ' ~ ' + whole_time_end)
 
+        self.AB.setStyleSheet("Color: red")
