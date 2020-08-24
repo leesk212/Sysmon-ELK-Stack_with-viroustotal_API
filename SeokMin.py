@@ -255,8 +255,11 @@ def find_last_100_logs(indice):
     for b in range(0, total):
         time.append(search_seventh['hits']['hits'][b]['_source']['winlog']['event_data']['UtcTime'])
         event_id.append(search_seventh['hits']['hits'][b]['_source']['winlog']['event_id'])
-        event_action.append(search_seventh['hits']['hits'][b]['_source']['event']['action'])
-        if event_id[b] == 8 or event_id[b] == 6:
+        if event_id[b] == 255:
+            event_action.append("Default")
+        else:
+            event_action.append(search_seventh['hits']['hits'][b]['_source']['event']['action'])
+        if event_id[b] == 8 or event_id[b] == 6 or event_id[b] == 16 or event_id[b] == 4 or event_id[b] == 255:
             event_data_processid.append("Default")
             Image.append("Default")
         else:
@@ -470,8 +473,84 @@ def find_whitelist_based_on_time(indice, starttime, endtime):
     return whitelists
 
 
-def find_abnormal_created_hwp_file(indice):
-    pass
+def find_abnormal_created_hwp_file(indice,starttime, endtime):
+    return_data = []
+
+    file_name = []
+    created_time = []
+    created_directory = []
+
+    run_time = [] #id = 1
+    run_directory = [] #od = 1
+    run_hash = []
+    run_commandline = []
+    run_Product_and_Description = []
+
+    search_fifthteen = es_client.search(
+        index=indice,
+        body={
+            "sort": [
+                {"@timestamp": "asc"}
+            ],
+            "size": 300,
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "match_phrase": {
+                                "winlog.event_id": "11"
+                            }
+                        }
+                    ],
+                    "filter": [
+                        {
+                            "match_all": {}
+                        },
+                        {
+                            "range": {
+                                "@timestamp": {
+                                    "gte": make_timeline_format.from_utctime(starttime),
+                                    "lte": make_timeline_format.from_utctime(endtime),
+                                    "format": "strict_date_optional_time"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    )
+    total = len(search_fifthteen['hits']['hits'])
+    for f in range(total):
+        FileName = search_fifthteen['hits']['hits'][f]['_source']['winlog']['event_data']['TargetFilename']
+        if '.hwp' in FileName:
+            temp_s = list(map(str,FileName.split("\\")))
+            temp = temp_s[len(temp_s)-1]
+            if temp.find('.hwp') + 4 != len(temp):
+                temp = temp[:temp.find('.hwp')+4]
+            file_name.append(temp)
+
+            created_time.append(search_fifthteen['hits']['hits'][f]['_source']['winlog']['event_data']['UtcTime'])
+            Directory = str()
+            for a in range(len(temp_s)-1):
+                Directory = Directory + temp_s[a] + '/'
+            created_directory.append(Directory)
+
+    for b in range(0, len(file_name)):
+        return_data.append(
+            'Filename: '+
+            file_name[b]+
+            '\nCreated_time: '+
+            created_time[b]+
+            '\nCreated_directory: '+
+            created_directory[b]+
+            '\n===================================================================='
+        )
+
+    return  return_data
+
+
+
 
 
 def find_abnormal_logs(indice, starttime, endtime):
@@ -485,7 +564,7 @@ def find_abnormal_logs(indice, starttime, endtime):
         index=indice,
         body={
             "sort": [
-                {"@timestamp": "desc"}
+                {"@timestamp": "asc"}
             ],
             "size": 300,
             "query": {
@@ -512,8 +591,11 @@ def find_abnormal_logs(indice, starttime, endtime):
     for b in range(0, total):
         time.append(search_fourteen['hits']['hits'][b]['_source']['winlog']['event_data']['UtcTime'])
         event_id.append(search_fourteen['hits']['hits'][b]['_source']['winlog']['event_id'])
-        event_action.append(search_fourteen['hits']['hits'][b]['_source']['event']['action'])
-        if event_id[b] == 8 or event_id[b] == 6:
+        if event_id[b] == 255:
+            event_action.append("Default")
+        else:
+            event_action.append(search_fourteen['hits']['hits'][b]['_source']['event']['action'])
+        if event_id[b] == 8 or event_id[b] == 6 or event_id[b] == 16 or event_id[b] == 4 or event_id[b] == 255:
             event_data_processid.append("Default")
             Image.append("Default")
         else:

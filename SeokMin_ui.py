@@ -140,7 +140,7 @@ class Mywindow(QMainWindow, form_class):
         C_E_E = rs.find_count_of_each_event_id(self.all_indices_view.currentItem().text())
         self.CEE.addItem("Total number of Event:   " + C_E_E[0])
         for f in range(1, len(C_E_E)):
-            self.CEE.addItem("\t\t" + C_E_E[f])
+            self.CEE.addItem("\t" + C_E_E[f])
 
         B_C_B = rs.find_booting_start_time(self.all_indices_view.currentItem().text())
         first_booting_time = rs.find_access_time(self.all_indices_view.currentItem().text())
@@ -282,4 +282,9 @@ class Mywindow(QMainWindow, form_class):
             self.LOB.addItem(
                 "====================================================================================================================================================================================")
             self.LOB.addItem("\n")
+
+            C_R_H = rs.find_abnormal_created_hwp_file(self.all_indices_view.currentItem().text(),Abnormal_time[0],Abnormal_time[1])
+            for f in range(0,len(C_R_H)):
+                self.CRH.addItem(C_R_H[f])
+            self.CRH.addItem("\n")
 

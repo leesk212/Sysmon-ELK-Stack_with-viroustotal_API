@@ -441,7 +441,7 @@ p, li { white-space: pre-wrap; }
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QListWidget" name="all_indices_view_2">
+     <widget class="QListWidget" name="CRH">
       <property name="geometry">
        <rect>
         <x>50</x>
