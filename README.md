@@ -3,6 +3,8 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ### Architecture
 
+![ex_screenshot](./img/Architecture.png)
+
 ## [HOST] Install Sysmon & Winlogbeat ( Winodw Env )
 
 ### Sysmon
