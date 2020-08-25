@@ -21,7 +21,13 @@ Sysmon logs in the window environment are received from a computer in another en
 ## 2020.08.21
 * Update Whitelist 이외의 layout 구현 완료
 * Error 찾는중 1번 실행은 잘 되지만 clear이후 2번실행은 값이 변하지 않는 것이 발견됌
-
+## 2020.08.22
+* Abnormal Tab idea구상
+* Abnormal Tab layout 구현 완료
+## 2020.08.24
+* Abnormal .hwp file open 잡기 가능
+## 2020.08.25
+* Sysmon - EL - PyQt5 구현 완료
  
 
 </div>
