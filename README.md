@@ -16,8 +16,10 @@ Sysmon logs in the window environment are received from a computer in another en
 #### Download Sysmon 
 * https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
 
+#### Download sysmonconfig-export.xml
+* https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml
+
 #### Run Sysmon
-* Download sysmonconfig-export.xml https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml
 ```
 PS> .\sysmon.exe -i [sysmonconfig-export.xml]
 PS> .\sysmon.exe -c [update_sysmonconfig-export.xml]
