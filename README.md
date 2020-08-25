@@ -1,4 +1,4 @@
-# Sysmon-EL-PyQt
+# Sysmon-EL-Python(PyQt5)
 Sysmon logs in the window environment are received from a computer in another environment through winlogbeat through Logstash, and then repositioned in Elasticsearch and displayed in PyQt.
 
 ### Architecture
