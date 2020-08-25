@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 import json
 
-form_class = uic.loadUiType('./code/SeokMin.ui')[0]
+form_class = uic.loadUiType('./Code/SeokMin.ui')[0]
 
 class Mywindow(QMainWindow, form_class):
     def __init__(self, rs):
