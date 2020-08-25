@@ -111,7 +111,7 @@ output {
 5601: Kibana
 
 
-### Down Docker-Container
+### Stop Docker-Container
 ```
 # sudo docker-compose down
 ```
@@ -173,6 +173,7 @@ output {
  
 
 <div markdown="1">
+
 * docker Sysmon-ELK: 
  https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 * Docker, ELK: https://judo0179.tistory.com/60
