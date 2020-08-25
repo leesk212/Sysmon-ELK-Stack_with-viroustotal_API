@@ -2,6 +2,7 @@ import SeokMin as rs
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 import json
+import sys
 
 form_class = uic.loadUiType('./Code/SeokMin.ui')[0]
 
