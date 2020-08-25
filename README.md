@@ -5,6 +5,10 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ![ex_screenshot](./img/Architecture.png)
 
+### Layout
+
+
+
 ## [HOST] Install Sysmon & Winlogbeat ( Winodw Env )
 
 ### Sysmon
@@ -15,7 +19,7 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ## [SERVER] Install Elasticsearch & Logstash by Docker ( Linux Env )
 
-#### Download Docker images
+### Download Docker images
 ```
 $ git clone https://github.com/deviantony/docker-elk.git
 $ sudo docker-compose build
@@ -73,7 +77,7 @@ output {
 5601: Kibana
 
 
-#### Down Docker-Container
+### Down Docker-Container
 ```
 # sudo docker-compose down
 ```
@@ -82,8 +86,6 @@ output {
 
 
 ## [SERVER] PyQt5 by Python3.7 ( Linux Env )
-
-### Layout
 
 ### Function
 
