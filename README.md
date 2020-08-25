@@ -15,11 +15,71 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ## [SERVER] Install Elasticsearch & Logstash by Docker ( Linux Env )
 
+#### Download Docker images
+```
+$ git clone https://github.com/deviantony/docker-elk.git
+$ sudo docker-compose build
+```
 
 ### Elasticsearch 
 
+* Disable some functions of X-pack <br/>
+
+```
+$ vi ./elasticsearch/config/elasticsearch.yml
+
+cluster.name: "docker-cluster" 
+network.host: 0.0.0.0 
+discovery.type: single-node
+```
 
 ### Logstash
+
+```
+$ vi ./logstash/config/logstash.yml
+
+http.host: "0.0.0.0"
+xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+```
+
+```
+$ vi ./logstash/pipeline/logstash.conf
+
+input {
+    beats{
+        port => 5000
+    }    
+}
+
+output {
+    elasticsearch {
+        hosts => "elasticsearch:9200"
+        user => "usernmaet"
+        password => "password"
+        index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+        document_type => "%{[@metadata][type]}"
+    }
+}
+```
+### Run Docker-Container
+```
+# sudo docker-compose up 
+```
+
+> Basic port
+5000: Logstash TCP input
+9200: Elasticsearch HTTP
+9300: Elasticsearch TCP transport
+5601: Kibana
+
+
+#### Down Docker-Container
+```
+# sudo docker-compose down
+```
+
+
+
 
 ## [SERVER] PyQt5 by Python3.7 ( Linux Env )
 
@@ -97,28 +157,6 @@ Sysmon logs in the window environment are received from a computer in another en
 
 
 
-#### 2.1 고정IP설정
-- ubuntu18부터는 이전 ubunut와 다르게 IP설정이 변경됨 </br>
-    
-
-#### 2.2 도커 이미지 다운로드
-```
-$ git clone https://github.com/deviantony/docker-elk.git
-$ sudo docker-compose build
-```
-
-
-#### 2.3 elasticsearch 설정
-* X-Pack설정 일부 비활성화 <br/>
-
-```
-$ vi ./elasticsearch/config/elasticsearch.yml
-
-cluster.name: "docker-cluster" 
-network.host: 0.0.0.0 
-discovery.type: single-node
-```
-
 
 #### 2.4 kibana 설정
 ```
@@ -130,53 +168,6 @@ elasticsearch.hosts: [ "http://elasticsearch:9200" ]
 xpack.monitoring.ui.container.elasticsearch.enabled: true
 ```
 
-
-#### 2.5 logstash설정
-```
-$ vi ./logstash/config/logstash.yml
-
-http.host: "0.0.0.0"
-xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
-```
-
-```
-$ vi ./logstash/pipeline/logstash.conf
-
-input {
-    beats{
-        port => 5000
-    }    
-}
-
-output {
-    elasticsearch {
-        hosts => "elasticsearch:9200"
-        user => "usernmaet"
-        password => "password"
-        index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
-        document_type => "%{[@metadata][type]}"
-    }
-}
-```
-
-#### 2.6 도커 컨테이너 실행
-- d인자는 데몬실행(각 컨테이너가 백그라운드로 서비스 실행)
-```
-# sudo docker-compose up -d
-```
-
-> 컨테이너 기본포트
-5000: Logstash TCP input
-9200: Elasticsearch HTTP
-9300: Elasticsearch TCP transport
-5601: Kibana
-
-
-#### 2.7 도커 컨테이너 종료
-- 모든 도커 컨테이너 종료
-```
-# sudo docker-compose down
-```
 
 
 ### 3. 악성코드 실행하는 가상머신 설정
