@@ -64,7 +64,7 @@ $ sudo docker-compose build
 * Disable some functions of X-pack <br/>
 
 ```
-$ vi ./elasticsearch/config/elasticsearch.yml
+$ vim ./elasticsearch/config/elasticsearch.yml
 
 cluster.name: "docker-cluster" 
 network.host: 0.0.0.0 
@@ -74,14 +74,14 @@ discovery.type: single-node
 ### Logstash
 
 ```
-$ vi ./logstash/config/logstash.yml
+$ vim ./logstash/config/logstash.yml
 
 http.host: "0.0.0.0"
 xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
 ```
 
 ```
-$ vi ./logstash/pipeline/logstash.conf
+$ vim ./logstash/pipeline/logstash.conf
 
 input {
     beats{
