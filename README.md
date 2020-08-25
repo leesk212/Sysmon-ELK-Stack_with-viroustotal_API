@@ -1,7 +1,7 @@
 # Sysmon-EL-PyQt
 Sysmon logs in the window environment are received from a computer in another environment through winlogbeat through Logstash, and then repositioned in Elasticsearch and displayed in PyQt.
 
-## Winodw10 Enviroment ( Install Sysmon & Winlogbeat )
+## [HOST] Winodw10 Enviroment ( Install Sysmon & Winlogbeat )
 
 ### Sysmon
 
@@ -9,7 +9,7 @@ Sysmon logs in the window environment are received from a computer in another en
 ### Winlogbeat
 
 
-## Linux Enviroment ( Install Elasticsearch & Logstash by Docker )
+## [SERVER] Linux Enviroment ( Install Elasticsearch & Logstash by Docker )
 
 
 ### Elasticsearch 
@@ -17,7 +17,7 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ### Logstash
 
-## PyQt5 by Python 
+## [SERVER] PyQt5 by Python 
 
 ### Archietecture
 
