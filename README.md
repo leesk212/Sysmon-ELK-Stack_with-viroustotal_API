@@ -37,7 +37,7 @@ winlogbeat.event_logs:
 
 output.logstash:
     # The Logstash hosts
-    hosts: ["우분투IP:5000"]
+    hosts: ["Ubuntu_IP:5000"]
     index: winlogbeat
 ```    
 
