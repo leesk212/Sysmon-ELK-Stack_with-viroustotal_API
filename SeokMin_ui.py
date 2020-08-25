@@ -243,7 +243,7 @@ class Mywindow(QMainWindow, form_class):
             self.indices_list_click()
 
     def onButtonClicked(self):
-        print("[log] onButtonClicked")
+        print("[log] Export_WhiteList")
         rs.openWhitelist.to_make_whitelist_in_local_directory('./', self.WhiteList)
         QMessageBox.about(self, "Success", "Success to export Whitelist")
 
