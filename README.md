@@ -13,9 +13,41 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ### Sysmon
 
+#### Download Sysmon 
+* https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
+
+#### Run Sysmon
+* Download sysmonconfig-export.xml https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml
+```
+PS> .\sysmon.exe -i [sysmonconfig-export.xml]
+PS> .\sysmon.exe -c [update_sysmonconfig-export.xml]
+```
 
 ### Winlogbeat
 
+#### Setting and Download winlogbeat
+- Download:  [https://www.elastic.co/kr/downloads/beats/winlogbeat](https://www.elastic.co/kr/downloads/beats/winlogbeat)
+
+- Setting winlogbeat.yml for sending Sysmon logs 
+```
+winlogbeat.event_logs:
+    - name: Microsoft-Windows-Sysmon/Operational
+
+output.logstash:
+    # The Logstash hosts
+    hosts: ["우분투IP:5000"]
+    index: winlogbeat
+```    
+
+#### Apply Setting winlogbeat 
+```
+PS> .\winlogbeat.exe -c .\winlogbeat.yml
+```
+#### Run winglobeat
+```
+PS> .\install-service-winlogbeat.ps1
+PS> start-service winlogbeat
+```
 
 ## [SERVER] Install Elasticsearch & Logstash by Docker ( Linux Env )
 
@@ -139,79 +171,6 @@ output {
  
 
 <div markdown="1">
-
-### docker ELK와 sysmon 연동
-
-
-### 1. 개요
-
-
-#### 1.1 아키텍처
-
-1. 수집한 sysmon이벤트를 winlogbeat를 사용하여 ELK서버의 logstash로 전달
-2. logstash는 sysmon이벤트를 elasticsearch에 전달
-3. kibana로 elasticsearch의 데이터를 탐색
-
-
-### 2. 서버설정
-* 서버 버전: ubuntu 18.04LTS </br>
-* docker, docker-compose 설치
-
-
-
-
-#### 2.4 kibana 설정
-```
-$ vi ./kibana/config/kibana.yml
-
-server.name: kibana
-server.host: "0"
-elasticsearch.hosts: [ "http://elasticsearch:9200" ]
-xpack.monitoring.ui.container.elasticsearch.enabled: true
-```
-
-
-
-### 3. 악성코드 실행하는 가상머신 설정
-
-#### 3.1 winlogbeat 설치&설정
-- 다운로드:  [https://www.elastic.co/kr/downloads/beats/winlogbeat](https://www.elastic.co/kr/downloads/beats/winlogbeat)
-![docker%20ELK%20sysmon/Untitled%201.png](docker%20ELK%20sysmon/Untitled%201.png)
-
-
-- sysmon데이터 전송을 위한 winlogbeat.yml설정
-```
-winlogbeat.event_logs:
-    - name: Microsoft-Windows-Sysmon/Operational
-
-output.logstash:
-    # The Logstash hosts
-    hosts: ["우분투IP:5000"]
-    index: winlogbeat
-```    
-
-#### 3.2 winlogbeat 설정 적용
-- winlogbeat 설정파일 적용
-```
-PS> .\winlogbeat.exe -c .\winlogbeat.yml
-```
-
-
-#### 3.3 sysmon 실행
-```
-PS> .\sysmon.exe -i [sysmon설정파일.xml]
-PS> .\sysmon.exe -c [sysmon 업데이트 파일.
-```
-* 설정파일이 없으면 https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml 다운받아 사용
-
-
-#### 3.4 winglobeat 실행
-```
-PS> .\install-service-winlogbeat.ps1
-PS> start-service winlogbeat
-```
-
-### 4. 참고자료
 * docker Sysmon-ELK: 
  https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 * Docker, ELK: https://judo0179.tistory.com/60
