@@ -3,7 +3,7 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ### Architecture
 
-## [HOST] Install Sysmon & Winlogbeat ( Winodw10 Enviroment )
+## [HOST] Install Sysmon & Winlogbeat ( Winodw Env )
 
 ### Sysmon
 
@@ -11,7 +11,7 @@ Sysmon logs in the window environment are received from a computer in another en
 ### Winlogbeat
 
 
-## [SERVER] Install Elasticsearch & Logstash by Docker ( Linux Enviroment )
+## [SERVER] Install Elasticsearch & Logstash by Docker ( Linux Env )
 
 
 ### Elasticsearch 
@@ -19,7 +19,7 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ### Logstash
 
-## [SERVER] PyQt5 by Python3.7 ( Linux Enviroment )
+## [SERVER] PyQt5 by Python3.7 ( Linux Env )
 
 ### Layout
 
