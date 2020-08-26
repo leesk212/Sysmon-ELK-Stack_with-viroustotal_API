@@ -1,3 +1,11 @@
+### ITF 하계 단기 인턴 결과물 
+ 
+ ***노트북:*** 개인노트북
+ ***만든 날자:*** 2020/08/25
+ ***작성자:*** 이석민
+ ***URL:*** https://github.com/leesk212/Sysmon-EL-Python_PyQt/
+
+
 # Sysmon-EL-Python(PyQt5)
 Sysmon logs in the window environment are received from a computer in another environment through winlogbeat through Logstash, and then repositioned in Elasticsearch and displayed in PyQt.
 
