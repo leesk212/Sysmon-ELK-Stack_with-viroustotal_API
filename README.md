@@ -7,7 +7,7 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ### Layout
 
-
+![ex_screenshot](./img/layout.png)
 
 ## [HOST] Install Sysmon & Winlogbeat ( Winodw Env )
 
