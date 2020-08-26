@@ -123,15 +123,31 @@ output {
 
 ### Function
 
+
 #### Abstract
+
+
+![ex_screenshot](./img/Abstract.png)
 
 #### Abnormal behavior
 
+
+![ex_screenshot](./img/Abnormal_behavior.png)
+
 #### Special List
+
+
+![ex_screenshot](./img/Special list.png)
 
 #### Make WhiteList
 
+
+![ex_screenshot](./img/MakeWhiteList.png)
+
 #### Search BlackList
+
+
+![ex_screenshot](./img/InspectBlackList.png)
 
 
 </br>
