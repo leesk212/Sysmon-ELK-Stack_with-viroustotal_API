@@ -1,14 +1,14 @@
-### 광운대 하계 단기 인턴 결과물 (2020/07/03~2020/08/25)
+### Kwangwoon University Summer Short-Term Internship Results (2020/07/03~2020/08/25)
  
- ***장소:*** InTheForest(cyber security) company
+ ***Place:*** InTheForest(cyber security) company
  
- ***노트북:*** 개인노트북(server) & 개인탭북(host)
+ ***Computer:*** Personal notebook(server) & Personal tabbook(host)
  
- ***만든 날짜:*** 2020/08/04
+ ***Created Date:*** 2020/08/04
  
- ***최종 수정 날짜:*** 2020/08/25
+ ***Last modified date:*** 2020/08/25
  
- ***작성자:*** 이석민
+ ***Writer:*** SeokMin Lee (gitID: leekatme)
  
  ***URL:*** https://github.com/leesk212/Sysmon-EL-Python_PyQt/
 
