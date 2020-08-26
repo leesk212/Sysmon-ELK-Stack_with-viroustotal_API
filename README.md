@@ -1,6 +1,6 @@
 ### 광운대 하계 단기 인턴 결과물 (2020/07/03~2020/08/25)
  
- ***장소:*** InTheForest(Cyber Security) company
+ ***장소:*** InTheForest(cyber security) company
  
  ***노트북:*** 개인노트북(server) & 개인탭북(host)
  
