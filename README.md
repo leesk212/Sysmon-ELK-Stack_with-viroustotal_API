@@ -135,7 +135,13 @@ $ sudo apt-get install idle-python3.7
 $ idle-python3.7  
 
 ```
-## Run Sysmon-EL-Python_PyQt
+### Run Sysmon-EL-Python_PyQt
+```
+$ git clone https://github.com/leesk212/Sysmon-EL-Python_PyQt.git
+$ cd Sysmon-EL-Python_PyQt/Code/
+$ python3 main.py
+```
+
 
 ### Function
 
