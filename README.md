@@ -121,6 +121,22 @@ output {
 
 ## [SERVER] PyQt5 by Python3.7 ( Linux Env )
 
+### Install Python3.7
+
+```
+$ wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+$ tar xvfz Python-3.7.4.tgz 
+$ cd Python-3.7.4  
+$ ./configure 
+$ make 
+$ sudo make install 
+$ python3 -V 
+$ sudo apt-get install idle-python3.7
+$ idle-python3.7  
+
+```
+
+
 ### Function
 
 
@@ -190,6 +206,7 @@ output {
 
 <div markdown="1">
 
+* install python3.7: https://somjang.tistory.com/entry/PythonUbuntu%EC%97%90-Python-37-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
 * docker Sysmon-ELK: 
  https://github.com/choisungwook/malware/tree/master/01%20blue%20team/sysmon/01%20elk%EC%84%A4%EC%B9%98%2B%EC%97%B0%EB%8F%99
 * Docker, ELK: https://judo0179.tistory.com/60
