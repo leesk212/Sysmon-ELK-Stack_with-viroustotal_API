@@ -137,7 +137,7 @@ output {
 #### Special List
 
 
-![ex_screenshot](./img/Special list.png)
+![ex_screenshot](./img/Speciallist.png)
 
 #### Make WhiteList
 
