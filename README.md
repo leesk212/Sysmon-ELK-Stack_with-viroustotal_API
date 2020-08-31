@@ -24,9 +24,6 @@ Sysmon logs in the window environment are received from a computer in another en
 
 ![ex_screenshot](./img/layout.png)
 
-### Demonstration video
-
-
 ## [HOST] Install Sysmon & Winlogbeat ( Winodw Env )
 
 ### Sysmon
