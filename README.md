@@ -8,7 +8,7 @@
  
  ***Last modified date:*** 2020/08/25
  
- ***Author:*** SeokMin Lee (gitID: leekatme)
+ ***Author:*** SeokMin Lee 
  
  ***URL:*** https://github.com/leesk212/Sysmon-EL-Python_PyQt/
 
